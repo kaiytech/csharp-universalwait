@@ -23,10 +23,10 @@ namespace Whatever
             public void Is(object target, int timeout = 10)
             {
                 if (_condition.Method.ReturnType != target.GetType())
-                    throw new Exception("Can't compare variables of different type.");
+                    throw new WaitException("Can't compare variables of different type.");
 
                 if (timeout < 1)
-                    throw new Exception("Timeout needs to be a positive integer");
+                    throw new WaitException("Timeout needs to be a positive integer");
 
                 var sw = new Stopwatch();
                 sw.Start();
@@ -41,7 +41,7 @@ namespace Whatever
                     }
                 }
 
-                throw new Exception($"Timed out while waiting for {_condition} to be {target}");
+                throw new WaitException($"Timed out while waiting for {_condition} to be {target}");
             }
         }
     }
