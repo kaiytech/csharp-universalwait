@@ -41,7 +41,7 @@ namespace Whatever
                     }
                 }
 
-                throw new WaitException($"Timed out while waiting for {_condition} to be {target}");
+                throw new WaitException($"Timed out while waiting for {_condition.Method.Name} to be {target}");
             }
         }
     }
