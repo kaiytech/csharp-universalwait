@@ -31,6 +31,8 @@ Wait.AsLongAs(ImHappy).Is(false)
 Failure to meet the condition in the given timestamp will result in an Exception.
 
 ...unless we specify otherwise.
-```var happy = Wait.Until(ImHappy).Is(true, throwException: false);```
+```
+var happy = Wait.Until(ImHappy).Is(true, throwException: false);
+```
 Then we can use the return value later on.
 
